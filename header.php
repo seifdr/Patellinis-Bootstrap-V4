@@ -37,6 +37,29 @@
 			<header id="masthead" class="site-header" role="banner">
 
 					<style type="text/css">
+
+
+						div.LogoOutter {
+							margin: 1em 0;
+							width: 100%;
+						}	
+
+						div.LogoInner {
+							margin: 0 auto;
+							max-width: 550px;
+						}
+
+						div.upperContactInfo {
+							margin-top: 1em;
+						}
+
+						div.upperContactInfo p { text-align: center !important; }
+
+						p.site-description {
+							font-family: $primaryFontFamily;
+							font-weight: 400;
+						}
+
 						nav.patel-navbar{
 							background-color: #000;
 							padding: 0;
@@ -63,6 +86,15 @@
 						}
 
 					</style>
+
+					<div class="site-branding">
+						<div class="LogoOutter">
+							<div class="LogoInner">
+								<?php $description = get_bloginfo( 'description', 'display' ); ?>
+								<img id="PatelinnisLogo" class="img-responsive" src='<?php echo esc_url( get_theme_mod( 'patelinni_logo', get_template_directory_uri() . '/img/Patelinnis-Header-Logo.png' ) ); ?>' alt="<?php echo $description; ?>" />
+							</div>
+						</div>
+					</div><!-- .site-branding -->
 
 
 					<nav class="navbar navbar-expand-lg patel-navbar">
