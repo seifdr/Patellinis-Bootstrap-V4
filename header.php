@@ -39,69 +39,50 @@
 					<style type="text/css">
 
 
-						div.LogoOutter {
-							margin: 1em 0;
-							width: 100%;
-						}	
-
-						div.LogoInner {
-							margin: 0 auto;
-							max-width: 550px;
-						}
-
-						div.upperContactInfo {
-							margin-top: 1em;
-						}
-
-						div.upperContactInfo p { text-align: center !important; }
-
-						p.site-description {
-							font-family: $primaryFontFamily;
-							font-weight: 400;
-						}
-
-						nav.patel-navbar{
-							background-color: #000;
-							padding: 0;
-						}
-
-						ul#upper-nav {
-							display: flex;
-							justify-content: space-evenly;
-							align-content: strech;
-							flex-grow: 1;
-						}
-
-						ul#upper-nav li {
-							display: flex;
-							flex-grow: 1;
-						}
-
-						ul#upper-nav li.wide {
-							flex-grow: 1.5;
-						}
-
-						ul#upper-nav li a {
-							width: 100%;
-						}
-
 					</style>
 
-					<div class="site-branding">
-						<div class="LogoOutter">
-							<div class="LogoInner">
-								<?php $description = get_bloginfo( 'description', 'display' ); ?>
-								<img id="PatelinnisLogo" class="img-responsive" src='<?php echo esc_url( get_theme_mod( 'patelinni_logo', get_template_directory_uri() . '/img/Patelinnis-Header-Logo.png' ) ); ?>' alt="<?php echo $description; ?>" />
-							</div>
+					
+					<div class="row upperContactInfo">
+						<div class="col-6 text-center">
+							<p>1429 Main Street Sarasota, Florida 34236</p>
 						</div>
-					</div><!-- .site-branding -->
+						<div class="col-6 text-center">
+							<p>Order Now - Call 941-957-6433</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="site-branding">
+								<div class="LogoOutter">
+									<div class="LogoInner">
+										<?php $description = get_bloginfo( 'description', 'display' ); ?>
+										<img id="PatelinnisLogo" class="img-responsive" src='<?php echo esc_url( get_theme_mod( 'patelinni_logo_white', get_template_directory_uri() . '/img/Patelinnis-Header-Logo.png' ) ); ?>' alt="<?php echo $description; ?>" />
+									</div>
+								</div>
+							</div><!-- .site-branding -->
+						</div>
+					</div>
 
 
-					<nav class="navbar navbar-expand-lg patel-navbar">
+						<style type="text/css">
+
+</style>
+
 						
-						<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
-						</button>
+<nav class="navbar navbar-expand-lg patel-navbar">
+		<div class="smallOnly">
+				<div>
+					<a class="navbar-brand visible-xs" href="<?php echo get_site_url(); ?>" id="xsLogo" alt="Visit our homepage!">
+						<img id="PatelinnisLogoSm" class="img-responsive" style="height: 50px; margin-top: 0; padding-top: 0;" src='<?php echo esc_url( get_theme_mod( 'patelinni_logo', get_template_directory_uri() . '/img/Patellinis-White-Logo.png' ) ); ?>' alt="Patellini's New York Style Pizza Logo. Sarasota, Florida." />
+					</a>
+				</div>
+				<div>
+					<div class="navbar-text navbar-left cellLinks"><a href="tel:9419576433" title="Order now" class="navbar-link">941-957-6433</a></div>
+				</div>
+			</div>
+							<button class="navbar-toggler navbar-toggler-right custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+									<span class="navbar-toggler-icon"></span>
+							</button>
 							<div class="collapse navbar-collapse" id="navbarNav">
 									<?php
 									$args = array(
