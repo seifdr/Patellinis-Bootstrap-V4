@@ -1,0 +1,29 @@
+// Callouts below the images
+div.callouts {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start; /* align items in Main Axis */
+    align-items: stretch; /* align items in Cross Axis */
+    align-content: stretch; /* Extra space in Cross Axis */
+
+    h3 {
+        text-align: center;
+    }
+
+    div:nth-child(3) {
+        display: flex;
+        flex: 1;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    div.callouts {
+        margin-top: 2em;
+
+        //section already has padding so the first one doesnt need it
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}

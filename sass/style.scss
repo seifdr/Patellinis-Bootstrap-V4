@@ -20,6 +20,9 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
+@import url('https://fonts.googleapis.com/css?family=Overlock|Roboto+Condensed: 400, 700');
+
+
 /*--------------------------------------------------------------
 # Variables
 --------------------------------------------------------------*/
@@ -40,24 +43,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import "media/media";
 
-// Callouts below the images
-div.callouts {
-    display: flex;
-    flex-direction: column;
 
-    justify-content: flex-start; /* align items in Main Axis */
-    align-items: stretch; /* align items in Cross Axis */
-    align-content: stretch; /* Extra space in Cross Axis */
 
-    h3 {
-        text-align: center;
-    }
 
-    div:nth-child(3) {
-        display: flex;
-        flex: 1;
-    }
-}
 
 // body style
 body {

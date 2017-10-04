@@ -44,9 +44,11 @@ div.LogoInner {
 div.upperContactInfo {
 	display: none;
 	padding-top: 1em;
-}
 
-div.upperContactInfo p { text-align: center !important; }
+	p {
+		text-align: center !important;
+	}
+}
 
 p.site-description {
 	font-family: $primaryFontFamily;
@@ -70,7 +72,8 @@ p.site-description {
 	//NAVIGATION
 	nav.patel-navbar {
 		background-color: #000;
-
+		padding: 0;
+	
 		div.smallOnly {
 			display: flex;
 			flex-grow: 1;
@@ -110,7 +113,7 @@ p.site-description {
 			}
 		}
 	}
-
+ 
 	
 ul#upper-nav {
 	display: flex;

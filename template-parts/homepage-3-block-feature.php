@@ -11,7 +11,7 @@
 
 <div class="pseudo-row">
     <div class="row mt-4 calloutContainer" >
-        <div class="col-12 col-sm-4 callouts">
+        <div class="col-12 col-sm-12 col-md-4 callouts">
             <div class="text-center">
                 <i class=" 
                     <?php if( !empty( $mf1['font_awesome_fa_values'] ) ){ echo $mf1['font_awesome_fa_values']; } else { echo 'fa fa-car'; } ?> 
@@ -27,7 +27,7 @@
                 <a type="button" href="<?php if( !empty( $mf1['page_link'] ) ){ echo $mf1['page_link']; } else { echo '#'; } ?>" class="btn btn-primary btn-lg btn-block"><?php if( !empty( $mf1['Button Text'] ) ){ echo $mf1['Button Text']; } else { echo "Delivery Areas"; } ?></a>
             </div>
         </div>			
-        <div class="col-12 col-sm-4 callouts">
+        <div class="col-12 col-sm-12 col-md-4 callouts">
             <div class="text-center">
                 <i class=" 
                 <?php if( !empty( $mf2['font_awesome_fa_values'] ) ){ echo $mf2['font_awesome_fa_values']; } else { echo 'fa fa-cutlery'; } ?>
@@ -43,7 +43,7 @@
                 <a type="button" href="<?php if( !empty( $mf2['page_link'] ) ){ echo $mf2['page_link']; } else { echo '#'; } ?>" class="btn btn-primary btn-lg btn-block"><?php if( !empty( $mf2['Button Text'] ) ){ echo $mf2['Button Text']; } else { echo "Catering & Parties Options"; } ?></a>
             </div>
         </div>		
-        <div class="col-12 col-sm-4 callouts">
+        <div class="col-12 col-sm-12 col-md-4 callouts">
             <div class="text-center">
                 <i class=" 
                 <?php if( !empty( $mf3['font_awesome_fa_values'] ) ){ echo $mf3['font_awesome_fa_values']; } else { echo 'fa fa-cutlery'; } ?>

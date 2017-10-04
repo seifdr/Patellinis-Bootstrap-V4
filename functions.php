@@ -1,4 +1,5 @@
 <?php
+
 /**
  * StrapPress functions and definitions
  *
@@ -113,3 +114,72 @@ require get_template_directory() . '/inc/customizer.php';
  * Bootstrap Walker.
  */
 require get_template_directory() . '/inc/bootstrap-walker.php';
+
+
+/** 
+* Patellini's Specific Stuff 
+*/
+
+/**
+*	Add in a Footer Widget Section
+*/
+require get_template_directory(). '/inc/footer-widgets.php';
+
+/**
+*	Change Wordpress default posts to menu items
+*/
+require_once('inc/menu.php');
+
+function look( $value, $margin = NULL ){
+	
+	if( $margin ){
+		echo "<div style='margin-left: 200px'>";
+	}
+
+	echo "<pre>";
+	print_r( $value );
+	echo "</pre>";
+
+	if( $margin ){
+		echo "</div>";
+	}
+
+}
+
+function not_Blank($var){
+	if( isset($var) && !empty($var) ){
+		return TRUE;
+	} else {
+		return FALSE;
+	}
+}
+
+function displayImg( $imgID = NULL, $size = "thumbnail", $class = NULL, $echo = FALSE ){
+	if( $imgID != NULL && !empty( $imgID ) ){
+			$image_url 	  = wp_get_attachment_image_src( $imgID, $size );
+			$image_alt 	  = get_post_meta( $imgID, '_wp_attachment_image_alt', true);
+			$image_title  = get_the_title( $imgID );
+
+			$output = '<img src="'. $image_url[0] .'"';
+
+			if( !empty( $image_alt ) ){ 
+				$output .= ' alt="'. $image_alt .'" ';
+			}  
+
+			if( !empty( $image_title ) ){ 
+				$output .= ' title="'. $image_title .'" ';
+			}  
+
+			if( !empty( $class ) ){ 
+				$output .= ' class="'. $class .'" ';
+			}  
+
+			$output .= ' />';
+			
+			if( $echo ){
+				echo $output; 
+			} else {
+				return $output;
+			}
+	}
+}
