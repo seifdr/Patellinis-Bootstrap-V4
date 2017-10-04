@@ -119,6 +119,7 @@ ul#upper-nav {
 	flex-grow: 1;
 }
 
+//change menu items to column direction
 @include media-breakpoint-down(md) { 
 	ul#upper-nav {
 		flex-direction: column;
