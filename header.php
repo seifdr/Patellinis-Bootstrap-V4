@@ -35,13 +35,6 @@
 		<div id="page" class="site">
 
 			<header id="masthead" class="site-header" role="banner">
-
-					<style type="text/css">
-
-
-					</style>
-
-					
 					<div class="row upperContactInfo">
 						<div class="col-6 text-center">
 							<p>1429 Main Street Sarasota, Florida 34236</p>
@@ -62,45 +55,39 @@
 							</div><!-- .site-branding -->
 						</div>
 					</div>
-
-
-						<style type="text/css">
-
-</style>
-
 						
-<nav class="navbar navbar-expand-lg patel-navbar">
-		<div class="smallOnly">
-				<div>
-					<a class="navbar-brand visible-xs" href="<?php echo get_site_url(); ?>" id="xsLogo" alt="Visit our homepage!">
-						<img id="PatelinnisLogoSm" class="img-responsive" style="height: 50px; margin-top: 0; padding-top: 0;" src='<?php echo esc_url( get_theme_mod( 'patelinni_logo', get_template_directory_uri() . '/img/Patellinis-White-Logo.png' ) ); ?>' alt="Patellini's New York Style Pizza Logo. Sarasota, Florida." />
-					</a>
-				</div>
-				<div>
-					<div class="navbar-text navbar-left cellLinks"><a href="tel:9419576433" title="Order now" class="navbar-link">941-957-6433</a></div>
-				</div>
-			</div>
-							<button class="navbar-toggler navbar-toggler-right custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-									<span class="navbar-toggler-icon"></span>
-							</button>
-							<div class="collapse navbar-collapse" id="navbarNav">
-									<?php
-									$args = array(
-										'menu' => 'Upper Nav',
-										// 'theme_location' => 'Upper Nav',
-										'depth'      => 3,
-										'container'  => false,
-										'menu_class' => 'nav nav-justified',
-										'menu_id' =>  'upper-nav',
-										'walker'     => new Bootstrap_Walker_Nav_Menu()
-										);
-									if (has_nav_menu('primary')) {
-										wp_nav_menu($args);
-									}
-									?>
+					<nav class="navbar navbar-expand-lg patel-navbar">
+							<div class="smallOnly">
+									<div>
+										<a class="navbar-brand visible-xs" href="<?php echo get_site_url(); ?>" id="xsLogo" alt="Visit our homepage!">
+											<img id="PatelinnisLogoSm" class="img-responsive" style="height: 50px; margin-top: 0; padding-top: 0;" src='<?php echo esc_url( get_theme_mod( 'patelinni_logo', get_template_directory_uri() . '/img/Patellinis-White-Logo.png' ) ); ?>' alt="Patellini's New York Style Pizza Logo. Sarasota, Florida." />
+										</a>
+									</div>
+									<div>
+										<div class="navbar-text navbar-left cellLinks"><a href="tel:9419576433" title="Order now" class="navbar-link">941-957-6433</a></div>
+									</div>
 								</div>
+								<button class="navbar-toggler navbar-toggler-right custom-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+										<span class="navbar-toggler-icon"></span>
+								</button>
+								<div class="collapse navbar-collapse" id="navbarNav">
+										<?php
+										$args = array(
+											'menu' => 'Upper Nav',
+											// 'theme_location' => 'Upper Nav',
+											'depth'      => 3,
+											'container'  => false,
+											'menu_class' => 'nav nav-justified',
+											'menu_id' =>  'upper-nav',
+											'walker'     => new Bootstrap_Walker_Nav_Menu()
+											);
+										if (has_nav_menu('primary')) {
+											wp_nav_menu($args);
+										}
+										?>
+									</div>
 
-				</nav>
+					</nav>
 			</header><!-- #masthead -->
 
 			<div id="content" class="site-content">

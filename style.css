@@ -6584,6 +6584,17 @@ div.callouts {
   .widget .tagcloud a {
     margin-bottom: .5rem; }
 
+/**
+*  Patellini's specific footer widgets
+*/
+div#primary-sidebar {
+  margin: 0;
+  padding: 0; }
+
+div.footer-widgets {
+  background-color: #000;
+  color: #fff; }
+
 /*--------------------------------------------------------------
 ## Header
 --------------------------------------------------------------*/
@@ -6730,9 +6741,10 @@ ul.nav-justified li a {
 ## Footer
 --------------------------------------------------------------*/
 .site-footer {
-  padding: 4rem 0;
-  margin-top: 4rem;
-  background-color: #f8f9fa; }
+  text-align: center;
+  padding: 1em;
+  color: #fff;
+  background-color: #000; }
 
 .site-content {
   word-break: break-word; }

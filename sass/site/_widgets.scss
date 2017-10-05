@@ -34,3 +34,23 @@
 		margin-bottom: .5rem;
 	}
 }
+
+
+/**
+*  Patellini's specific footer widgets
+*/
+
+div#primary-sidebar {
+	margin: 0;
+	padding: 0;
+}
+
+div.footer-widgets {
+	background-color: $black;
+	color: $white;
+}
+
+div.footer-widget {
+
+}
+

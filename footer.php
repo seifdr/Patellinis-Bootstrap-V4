@@ -10,19 +10,24 @@
  */
 
 ?>
-
 	</div><!-- #content -->
+</div><!-- #page -->
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+<div id="primary-sidebar" class="row footer-widgets" role="complementary">
+		<?php if ( is_active_sidebar( 'patellinis-footer-widgets' ) ) { ?>
+				<?php dynamic_sidebar( 'patellinis-footer-widgets' ); ?>
+		<?php } ?>
+	</div>
+
+
+
+<footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="site-info">
 				&copy; <?php bloginfo( 'name' );
 						echo ' - ';
 						echo date("Y"); ?>
 			</div><!-- .site-info -->
 	</footer><!-- #colophon -->
-
-</div><!-- #page -->
-
 
 <?php wp_footer(); ?>
 
