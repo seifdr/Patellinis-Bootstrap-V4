@@ -22,7 +22,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 @import url('https://fonts.googleapis.com/css?family=Overlock|Roboto+Condensed: 400, 700');
 
-
 /*--------------------------------------------------------------
 # Variables
 --------------------------------------------------------------*/
@@ -31,7 +30,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /*--------------------------------------------------------------
 # Bootstrap
 --------------------------------------------------------------*/
-@import "bootstrap";
+@import "bootstrap"; 
+
+/*--------------------------------------------------------------
+# Font Awesome SCSS
+--------------------------------------------------------------*/
+@import "font-awesome-4.7.0/font-awesome"; 
 
 /*--------------------------------------------------------------
 # Theme Styles and Layout
