@@ -1,0 +1,71 @@
+/**
+* CSS Patellinis Image Carousel
+* - Based on Bootstrap 4 beta
+*/
+
+//shrink the amont of space the arrow advancers are taking up
+.carousel-control-prev, .carousel-control-next {
+    width: 10% !important;
+}
+
+div.carousel-inner div.carousel-caption {
+	h1 { margin-top: 0; }
+
+	p { font-family: $primaryFontFamily !important;}
+}
+
+// increase the amont of pixels to raise up the carousel caption on xl 
+@include media-breakpoint-up(xl){
+    div.carousel-caption {
+        bottom: 50px;
+    }
+}
+
+// aligning captions on medium on down looks bad but it can look pretty cool on 
+// large and above
+@include media-breakpoint-up(lg){
+    
+    //cc = .carousel-caption
+    div.cc-left {
+        left: 10%;
+        right: auto;
+    }
+
+    div.cc-right {
+        right: 10%;
+        left: auto;
+    }
+}
+
+//adjust the text sizes on various window sizes
+div.inner-carousel-caption {
+    text-shadow: 1px 1px $black;
+
+    a { text-shadow: none; }
+
+    h1 { font-size: 65px; }
+
+    p.secondaryText { font-size: 30px; }
+
+    @include media-breakpoint-down(md){
+        h1 { font-size: 45px; }
+    
+        p.secondaryText { font-size: 15px; }
+    } 
+
+    @include media-breakpoint-down(sm){
+        p.secondaryText { display: none; }
+    }
+
+    @include media-breakpoint-down(xs) {
+        h1 { font-size: 35px; }
+    }
+
+}
+
+//on the smallest screens remove the carousel indicators
+@include media-breakpoint-down(xs) {
+    ol.carousel-indicators {
+        display: none;
+    }
+}

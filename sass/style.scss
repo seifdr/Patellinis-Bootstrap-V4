@@ -90,4 +90,9 @@ div.pseudo-row {
 	background-color: $primaryRed;
 	color: $white;
 	border: 0;
+
+	&:hover {
+		background-color: $secondaryRed;
+	}
+
 }

@@ -26,21 +26,25 @@
                                 if( $i == 0 ){ echo ' active '; }
                             echo '">';
                                 echo '<img class="d-block img-fluid" src="'. $imgC[$i]['image']['url'] .'" alt="'. $imgC[$i]['image']['alt'] .'">';
-                                echo '<div class="carousel-caption';
-
-                                if( $imgC[$i]['caption_position'] == "1" ){ echo ' left '; } elseif ( $imgC[$i]['caption_position'] == "2" ){ echo ' right '; } else { echo " center "; }
+                                echo '<div class="carousel-caption ';
+                                
+                                if( $imgC[$i]['caption_position'] == "1" ){ echo ' cc-left '; } elseif ( $imgC[$i]['caption_position'] == "2" ){ echo ' cc-right '; } else { echo " center "; }
                                 echo '">';
-                                echo "<h1>". $imgC[$i]['primary_text'] ."</h1>";
-                                echo "<p class='d-none d-sm-block' >". $imgC[$i]['secondary_text'] . "</p>";
-                                
-                                if( !empty( $imgC[$i]['button_text'] ) ){
-                                    echo "<a href='". $imgC[$i]['page_link'] ."' type='button' class='btn btn-primary btn-lg d-none d-lg-inline-block'>". $imgC[$i]['button_text'] ."</a>";
+        
+                                echo '<div class="inner-carousel-caption">';
+                                   
+                                    echo "<h1>". $imgC[$i]['primary_text'] ."</h1>";
+                                    echo "<p class='secondaryText' >". $imgC[$i]['secondary_text'] . "</p>";
+                                    
+                                    if( !empty( $imgC[$i]['button_text'] ) ){
+                                        echo "<a href='". $imgC[$i]['page_link'] ."' type='button' class='btn btn-primary btn-lg d-none d-lg-inline-block'>". $imgC[$i]['button_text'] ."</a>";
 
-                                    echo "<a href='". $imgC[$i]['page_link'] ."' type='button' class='btn btn-primary btn-md d-none d-md-inline-block d-lg-none'>". $imgC[$i]['button_text'] ."</a>";
+                                        echo "<a href='". $imgC[$i]['page_link'] ."' type='button' class='btn btn-primary btn-md d-none d-md-inline-block d-lg-none'>". $imgC[$i]['button_text'] ."</a>";
 
-                                    echo "<a href='". $imgC[$i]['page_link'] ."' type='button' class='btn btn-primary btn-sm d-none d-sm-inline-block d-md-none'>". $imgC[$i]['button_text'] ."</a>";
-                                }
-                                
+                                        echo "<a href='". $imgC[$i]['page_link'] ."' type='button' class='btn btn-primary btn-sm d-none d-sm-inline-block d-md-none'>". $imgC[$i]['button_text'] ."</a>";
+                                    }
+                                echo '</div>';
+
                                 echo '</div>';
                             echo '</div>';
                     }

@@ -8757,6 +8757,55 @@ a.text-dark:focus, a.text-dark:hover {
               flex: 0 0 33.33333333%;
       max-width: 33.33333333%; } }
 
+/**
+* CSS Patellinis Image Carousel
+* - Based on Bootstrap 4 beta
+*/
+.carousel-control-prev, .carousel-control-next {
+  width: 10% !important; }
+
+div.carousel-inner div.carousel-caption h1 {
+  margin-top: 0; }
+
+div.carousel-inner div.carousel-caption p {
+  font-family: "Roboto Condensed", sans-serif !important; }
+
+@media (min-width: 1200px) {
+  div.carousel-caption {
+    bottom: 50px; } }
+
+@media (min-width: 992px) {
+  div.cc-left {
+    left: 10%;
+    right: auto; }
+  div.cc-right {
+    right: 10%;
+    left: auto; } }
+
+div.inner-carousel-caption {
+  text-shadow: 1px 1px #000; }
+  div.inner-carousel-caption a {
+    text-shadow: none; }
+  div.inner-carousel-caption h1 {
+    font-size: 65px; }
+  div.inner-carousel-caption p.secondaryText {
+    font-size: 30px; }
+  @media (max-width: 991px) {
+    div.inner-carousel-caption h1 {
+      font-size: 45px; }
+    div.inner-carousel-caption p.secondaryText {
+      font-size: 15px; } }
+  @media (max-width: 767px) {
+    div.inner-carousel-caption p.secondaryText {
+      display: none; } }
+  @media (max-width: 575px) {
+    div.inner-carousel-caption h1 {
+      font-size: 35px; } }
+
+@media (max-width: 575px) {
+  ol.carousel-indicators {
+    display: none; } }
+
 div.callouts {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -9190,3 +9239,5 @@ div.pseudo-row {
   background-color: #b32317;
   color: #fff;
   border: 0; }
+  .btn-primary:hover {
+    background-color: #861a11; }
