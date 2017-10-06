@@ -4,10 +4,12 @@
         $bf_image	= get_field('bottom_feature_image', $post->ID );
 ?>
 <div class="pseudo-row" >
-        <div class="row bottomFeature mt-4">
+        <div class="row bottomFeature mt-4 mb-4">
             <div class="col-12 col-sm-12 col-md-12 col-lg-6">
-                <h2><?php echo get_field('bottom_feature_title') ?></h2>
-                <p><?php echo get_field('bottom_feature_text'); ?></p>
+               <div class="innerBottomFeatureTxt">
+                    <h2><?php echo get_field('bottom_feature_title') ?></h2>
+                    <p><?php echo get_field('bottom_feature_text'); ?></p>
+               </div>
             </div>
             <div class="col-12 col-sm-12 col-md-12 col-lg-6">
             <?php  
