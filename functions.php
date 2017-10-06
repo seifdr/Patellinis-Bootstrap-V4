@@ -128,7 +128,7 @@ require get_template_directory(). '/inc/footer-widgets.php';
 /**
 *	Change Wordpress default posts to menu items
 */
-require_once('inc/menu.php');
+require get_template_directory(). '/inc/menu.php';
 
 function look( $value, $margin = NULL ){
 	
