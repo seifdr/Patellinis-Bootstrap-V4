@@ -13,7 +13,6 @@
 	</div><!-- #content -->
 </div><!-- #page -->
 
-div.p
 <div id="primary-sidebar" class="row footer-widgets" role="complementary">
 		<?php if ( is_active_sidebar( 'patellinis-footer-widgets' ) ) { ?>
 				<?php dynamic_sidebar( 'patellinis-footer-widgets' ); ?>
