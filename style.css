@@ -6593,7 +6593,10 @@ div#primary-sidebar {
 
 div.footer-widgets {
   background-color: #000;
-  color: #fff; }
+  color: #fff;
+  text-align: center; }
+  div.footer-widgets > div {
+    padding-top: 1em; }
 
 /*--------------------------------------------------------------
 ## Header

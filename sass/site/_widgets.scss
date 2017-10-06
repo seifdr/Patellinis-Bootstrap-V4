@@ -48,9 +48,11 @@ div#primary-sidebar {
 div.footer-widgets {
 	background-color: $black;
 	color: $white;
+	text-align: center;
+	
+	& > div {
+		padding-top: 1em;
+	}
 }
 
-div.footer-widget {
-
-}
 
