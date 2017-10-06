@@ -85,3 +85,9 @@ div.pseudo-row {
 .red {
 	color: $primaryRed;
 }
+
+.btn-primary {
+	background-color: $primaryRed;
+	color: $white;
+	border: 0;
+}

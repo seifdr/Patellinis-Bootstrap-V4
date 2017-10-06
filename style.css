@@ -9152,7 +9152,7 @@ body {
   background-color: #b32317 !important;
   background-image: url("img/offsetArrows40o.png"); }
   body p, body td, body span {
-    font-size: 1.25em; }
+    font-size: 1em; }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto Condensed", sans-serif !important; }
@@ -9167,3 +9167,8 @@ div.pseudo-row {
 
 .red {
   color: #b32317; }
+
+.btn-primary {
+  background-color: #b32317;
+  color: #fff;
+  border: 0; }
