@@ -8991,6 +8991,16 @@ div.footer-widgets {
   text-align: center; }
   div.footer-widgets > div {
     padding-top: 1em; }
+  div.footer-widgets a#emailUs {
+    color: #fff; }
+    div.footer-widgets a#emailUs:focus, div.footer-widgets a#emailUs:active {
+      box-shadow: none !important; }
+  div.footer-widgets a#emailUs:before {
+    font-family: FontAwesome;
+    content: "\f003";
+    font-size: 1em;
+    color: #fff;
+    padding-right: 5px; }
 
 /*--------------------------------------------------------------
 ## Header

@@ -53,6 +53,25 @@ div.footer-widgets {
 	& > div {
 		padding-top: 1em;
 	}
+
+	a#emailUs {
+		color: #fff;
+	
+		&:focus, &:active {
+			box-shadow: none !important;
+		}
+	
+	}
+	
+	a#emailUs:before {
+		font-family: FontAwesome;
+		content: "\f003" ;
+		font-size: 1em;
+		color: #fff;
+		padding-right: 5px;
+	}
 }
+
+
 
 
