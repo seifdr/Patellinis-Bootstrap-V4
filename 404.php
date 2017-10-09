@@ -20,49 +20,21 @@ get_header(); ?>
 						</header><!-- .page-header -->
 
 						<div class="page-content">
-							<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'strappress' ); ?></p>
-
+							<p><?php esc_html_e( 'It looks like nothing was found at this location.', 'strappress' ); ?></p>
+							<p><a title="Visit our homepage" href="<?php echo get_home_url(); ?>">Click here to return home</a> or visit our <a href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">menu page.</a></p>
 							<?php
-								get_search_form();
+								//get_search_form();
 
-								the_widget( 'WP_Widget_Recent_Posts' );
+								//the_widget( 'WP_Widget_Recent_Posts' );
 
 								// Only show the widget if site has multiple categories.
-								if ( strappress_categorized_blog() ) :
 							?>
-
-							<div class="widget widget_categories">
-								<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'strappress' ); ?></h2>
-								<ul>
-								<?php
-									wp_list_categories( array(
-										'orderby'    => 'count',
-										'order'      => 'DESC',
-										'show_count' => 1,
-										'title_li'   => '',
-										'number'     => 10,
-									) );
-								?>
-								</ul>
-							</div><!-- .widget -->
-
-							<?php
-								endif;
-
-								/* translators: %1$s: smiley */
-								$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'strappress' ), convert_smilies( ':)' ) ) . '</p>';
-								the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-								the_widget( 'WP_Widget_Tag_Cloud' );
-							?>
-
 						</div><!-- .page-content -->
 					</section><!-- .error-404 -->
 
 				</main><!-- #main -->
 			</div><!-- #primary -->
 		</div><!--  .row -->
-	</div><!--  .container -->
 
 <?php
 get_footer();
