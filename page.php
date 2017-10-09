@@ -16,7 +16,18 @@ get_header(); ?>
 
 	<div class="container main-container">
 		<div class="row">
-			<div id="primary" class="<?php echo ( is_active_sidebar( 'sidebar-1' ) )? 'content-area-with-sidebar' : 'content-area'; ?>">
+			<div id="primary" class="<?php 
+					//add class if there is a image feature set 
+					if( has_post_thumbnail() ){
+						echo "content-area-with-feature-img";
+					// add class if there is side bar
+					} elseif ( is_active_sidebar( 'sidebar-1' ) ) {
+						echo "content-area-with-sidebar";
+					// no featured image or sidebar
+					} else {
+						echo "content-area";
+					}
+			?>">
 				<main id="main" class="site-main" role="main">
 					
 					<?php
