@@ -14,21 +14,23 @@
 
 get_header(); ?>
 
-        <div id="primary">
-            <main id="main" class="site-main" role="main">
+<div class="container main-container home-container">
+            <div id="primary">
+                <main id="main" class="site-main" role="main">
 
-                <!-- HOMEPAGE IMAGE CAROUSEL -->
-                <?php get_template_part( 'template-parts/homepage-carousel'); ?>
+                    <!-- HOMEPAGE IMAGE CAROUSEL -->
+                    <?php get_template_part( 'template-parts/homepage-carousel'); ?>
 
-                <!-- HOMEPAGE IMAGE CAROUSEL -->
-                <?php get_template_part( 'template-parts/homepage-3-block-feature'); ?>
+                    <!-- HOMEPAGE 3 BLOCK FEATURE -->
+                    <?php get_template_part( 'template-parts/homepage-3-block-feature'); ?>
 
-                <!-- HOMEPAGE IMAGE CAROUSEL -->
-                <?php get_template_part( 'template-parts/homepage-bottom-feature'); ?>
+                    <!-- HOMEPAGE BOTTOM FEATURE -->
+                    <?php get_template_part( 'template-parts/homepage-bottom-feature'); ?>
 
-            </main><!-- #main -->
-        </div><!-- #primary -->
+                </main><!-- #main -->
+            </div><!-- #primary -->
 
 <?php
 // get_sidebar();
+
 get_footer();

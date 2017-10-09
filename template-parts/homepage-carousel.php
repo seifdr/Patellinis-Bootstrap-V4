@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-12">
+    <div class="col-12 hp-carousel-outter-container">
     <?php 
         if( function_exists( 'get_field' ) ){
 

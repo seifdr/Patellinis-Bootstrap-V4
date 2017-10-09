@@ -8772,6 +8772,10 @@ a.text-dark:focus, a.text-dark:hover {
 * CSS Patellinis Image Carousel
 * - Based on Bootstrap 4 beta
 */
+div.hp-carousel-outter-container {
+  padding-left: 0;
+  padding-right: 0; }
+
 .carousel-control-prev, .carousel-control-next {
   width: 10% !important; }
 
@@ -9248,6 +9252,9 @@ h1, h2, h3, h4, h5, h6 {
 .main-container {
   margin-top: 1em; }
 
+.home-container {
+  margin-top: 0; }
+
 div.container a {
   color: #b32317; }
 
@@ -9264,7 +9271,7 @@ div.pseudo-row {
 
 .btn-primary {
   background-color: #b32317;
-  color: #fff;
+  color: #fff !important;
   border: 0; }
   .btn-primary:hover {
     background-color: #861a11; }

@@ -3,6 +3,12 @@
 * - Based on Bootstrap 4 beta
 */
 
+// remove the padding from the row encapsulating the main hp carousel
+div.hp-carousel-outter-container {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 //shrink the amont of space the arrow advancers are taking up
 .carousel-control-prev, .carousel-control-next {
     width: 10% !important;

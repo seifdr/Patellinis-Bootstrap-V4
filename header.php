@@ -48,8 +48,10 @@
 							<div class="site-branding">
 								<div class="LogoOutter">
 									<div class="LogoInner">
-										<?php $description = get_bloginfo( 'description', 'display' ); ?>
-										<img id="PatelinnisLogo" class="img-responsive" src='<?php echo esc_url( get_theme_mod( 'patelinni_logo_white', get_template_directory_uri() . '/img/Patelinnis-Header-Logo.png' ) ); ?>' alt="<?php echo $description; ?>" />
+										<a href="<?php echo home_url(); ?>">
+											<?php $description = get_bloginfo( 'description', 'display' ); ?>
+											<img id="PatelinnisLogo" class="img-responsive" src='<?php echo esc_url( get_theme_mod( 'patelinni_logo_white', get_template_directory_uri() . '/img/Patelinnis-Header-Logo.png' ) ); ?>' alt="<?php echo $description; ?>" />
+										</a>
 									</div>
 								</div>
 							</div><!-- .site-branding -->

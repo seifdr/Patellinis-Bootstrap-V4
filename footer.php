@@ -16,6 +16,7 @@
 					<?php dynamic_sidebar( 'patellinis-footer-widgets' ); ?>
 			<?php } ?>
 	</div>
+	
 </div><!-- #content -->
 </div><!-- #page -->
 
