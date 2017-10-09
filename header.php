@@ -93,3 +93,12 @@
 			</header><!-- #masthead -->
 
 			<div id="content" class="site-content">
+			<?php if( !is_front_page() ){ ?>
+				<div class="row">
+					<div class="col-12">
+						<?php echo bootstrap_breadcrumb(); ?>
+					</div>
+				</div>
+			<?php } ?>
+
+

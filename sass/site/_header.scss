@@ -55,6 +55,17 @@ p.site-description {
 	font-weight: 400;
 }
 
+/**
+*	Breadcrumb styling
+*/
+ol.breadcrumb {
+	background-color: transparent;
+
+	li.active {
+		color: $black;
+	}
+}
+
 
 @include media-breakpoint-up(lg) { 
 	//hello

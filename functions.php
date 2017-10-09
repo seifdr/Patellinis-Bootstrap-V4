@@ -126,6 +126,12 @@ require get_template_directory() . '/inc/bootstrap-walker.php';
 require get_template_directory(). '/inc/footer-widgets.php';
 
 /**
+ * Implement the Breadcrumbs feature.
+ */
+require get_template_directory() . '/inc/breadcrumbs.php';
+
+
+/**
 *	Change Wordpress default posts to menu items
 */
 require get_template_directory(). '/inc/menu.php';
