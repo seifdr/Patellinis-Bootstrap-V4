@@ -8968,6 +8968,22 @@ div.bottomFeature div.innerBottomFeatureTxt h2 {
           flex: 0 0 100%;
   max-width: 100%; }
 
+div#locationAndHours table {
+  width: 100%; }
+
+div#locationAndHours td:nth-child(odd) {
+  text-align: right;
+  padding-right: 5px; }
+
+div#locationAndHours td:nth-child(even) {
+  padding-left: 5px;
+  text-align: left; }
+
+div.map-row {
+  margin: 1em; }
+  div.map-row .maps iframe {
+    pointer-events: none; }
+
 /*--------------------------------------------------------------
 ## Widgets
 --------------------------------------------------------------*/

@@ -1,0 +1,26 @@
+div#locationAndHours {
+    table {
+        width: 100%;
+    }
+
+    td:nth-child(odd) {
+        text-align: right;
+        padding-right: 5px;
+    }
+
+    td:nth-child(even) {
+        padding-left: 5px;
+        text-align: left; 
+    }
+}
+
+div.map-row {
+    margin: 1em;
+
+    // disable mouse pointer events. Can be turne back on via javascript
+    .maps iframe{
+        pointer-events: none;
+    }
+
+}
+

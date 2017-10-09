@@ -7,7 +7,7 @@
 // homepage items
 @import "layout/hp-image-carousel";
 @import "layout/hp-3-callouts";
-@import "layout/hp-bottom-feature";
+@import "layout/hp-bottom-feature";  
 
 /*--------------------------------------------------------------
 ## Comments
@@ -18,6 +18,8 @@
 ## Posts and Pages
 --------------------------------------------------------------*/
 @import "posts-and-pages";
+//scss for the location and hours page
+@import "layout/location-and-hours"; 
 
 /*--------------------------------------------------------------
 ## Widgets
