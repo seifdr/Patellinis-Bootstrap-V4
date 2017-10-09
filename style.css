@@ -8724,15 +8724,26 @@ a.text-dark:focus, a.text-dark:hover {
   width: 100%;
   min-height: 1px;
   padding-right: 15px;
+  padding-left: 15px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  max-width: 100%; }
+
+.content-area-with-sidebar {
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
   padding-left: 15px; }
   @media (min-width: 576px) {
-    .content-area {
+    .content-area-with-sidebar {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 100%;
               flex: 0 0 100%;
       max-width: 100%; } }
   @media (min-width: 768px) {
-    .content-area {
+    .content-area-with-sidebar {
       -webkit-box-flex: 0;
           -ms-flex: 0 0 66.66666667%;
               flex: 0 0 66.66666667%;
@@ -9233,6 +9244,12 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto Condensed", sans-serif !important; }
+
+.main-container {
+  margin-top: 1em; }
+
+div.container a {
+  color: #b32317; }
 
 div.master-container {
   background-color: #fff;

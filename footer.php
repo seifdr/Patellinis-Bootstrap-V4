@@ -10,16 +10,14 @@
  */
 
 ?>
-	</div><!-- #content -->
+
+	<div id="footer-sidebar" class="row footer-widgets" role="complementary">
+			<?php if ( is_active_sidebar( 'patellinis-footer-widgets' ) ) { ?>
+					<?php dynamic_sidebar( 'patellinis-footer-widgets' ); ?>
+			<?php } ?>
+	</div>
+</div><!-- #content -->
 </div><!-- #page -->
-
-<div id="primary-sidebar" class="row footer-widgets" role="complementary">
-		<?php if ( is_active_sidebar( 'patellinis-footer-widgets' ) ) { ?>
-				<?php dynamic_sidebar( 'patellinis-footer-widgets' ); ?>
-		<?php } ?>
-</div>
-
-
 
 <footer id="colophon" class="site-footer" role="contentinfo">
 			<div class="site-info">
@@ -29,8 +27,10 @@
 			</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 
+
 <?php wp_footer(); ?>
 
-</div> <!-- closing the container div from above -->
+
+</div><!--  .container -->
 </body>
 </html>
