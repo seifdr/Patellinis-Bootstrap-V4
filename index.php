@@ -18,7 +18,7 @@ get_header(); ?>
 		<div class="row">
 			<div id="primary" class="content-area">
 				<main id="main" class="site-main" role="main">
-					<div class="col-12">
+					<div class="col-12 col-sm-8 ml-auto mr-auto">
 					<?php
 						// ini_set('display_errors', 1);
 						// ini_set('display_startup_errors', 1);
@@ -27,7 +27,7 @@ get_header(); ?>
 
 					<div class="row">
 							<!-- <div class="col-0 col-sm-2 b-red"></div> -->
-							<div class="col-12 col-sm-8 ml-auto mr-auto">
+							<div class="col-12">
 								<p>For those with a gluten allergy or have Celiac Disease, please visit our <a href="#<?php //echo get_term_link('gluten free', 'post_tag'); ?>"><strong> gluten free menu </strong></a>.</p>
 								<br />
 								<p><strong>Browse our menu by category</strong></p>
@@ -35,7 +35,7 @@ get_header(); ?>
 							<!-- <div class="col-0 col-sm-2 b-red"></div> -->
 					</div>
 						<div class="row browseMenu">
-									<ul class="col-12 col-sm-4 ml-auto" >
+									<ul class="col-6" >
 									<?php 
 
 										$categories = get_categories( array(
@@ -77,7 +77,7 @@ get_header(); ?>
 											echo '<li><a href="#'. $category->name .'">'.  $category->name . '</a></li>';
 
 											if( $catCount == $categoryCnt ){
-												echo '</ul><ul class="col-12 col-sm-4 mr-auto">';
+												echo '</ul><ul class="col-6">';
 											}
 										}
 									?>
@@ -101,7 +101,7 @@ get_header(); ?>
 								<div class="col-12">
 								<?php 
 		
-									echo "<h2 id='". $category->name ."' >". $category->name ."</h2>";
+									echo "<h2 id='". $category->name ."' class='menuCat' >". $category->name ."</h2>";
 		
 									echo "<p>". $category->description . "</p>";
 								?>
@@ -132,7 +132,7 @@ get_header(); ?>
 										include( 'template-parts/menu-items/fresh-salads.php' );	
 									} elseif( strtolower( $thisCategory[0]->cat_name ) == "beverages" ){
 										$bev_counter++;
-										//include( 'template-parts/menu-items/beverages.php' );
+										include( 'template-parts/menu-items/beverages.php' );
 									} else {
 										include( 'template-parts/menu-items/standard.php' );
 									}

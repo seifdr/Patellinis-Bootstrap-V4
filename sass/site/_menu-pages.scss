@@ -1,3 +1,35 @@
+h2.menuCat { 
+    color: #b32317;
+    text-transform: uppercase;
+    text-align: center;
+} 
+
+.menuItem h4, .simulatedH4 {
+    font-size: 18px;
+    font-weight: 500px;
+    margin: 10px 0px;
+    line-height: 19.8px;
+    font-family: $primaryFontFamily;
+}
+
+.noMargin {
+    margin-top: 0 !important;
+}
+
+body.blog h2, body.archive h2, body.single h1 {
+    color: $primaryRed;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+body.blog p, body.archive p, body.single p {
+    text-align: left;
+}
+
+body.blog div.menuItem, body.archive div.menuItem, {
+    margin-bottom: 1.5em;
+}
+
 a.catLinks:hover, a.catLinks:active, a.catLinks:focus, a.menuLinks:hover, a.menuLinks:active, a.catLinks:focus {
     text-decoration: none;
     cursor: default !important;
@@ -70,3 +102,4 @@ div.browseMenu {
     }
 
 }
+

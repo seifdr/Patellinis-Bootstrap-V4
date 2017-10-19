@@ -47,10 +47,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import "media/media";
 
-
-
-
-
 // body style
 body {
 	font-family: 'Overlock', serif !important;
@@ -58,7 +54,7 @@ body {
     background-image: url('img/offsetArrows40o.png');
 	
 	p, td, span {
-		font-size: $textFontSize;
+		font-size: $textFontSize; 
 	}
 
     // background-image: url('../img/arrows128block40o.png');
@@ -69,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .home-container {
-	margin-top: 0;
+	margin-top: 0; 
 }
 
 div.container a {

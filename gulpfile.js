@@ -22,7 +22,7 @@ var config = {
 
 // automatically reloads the page when files changed
 var browserSyncWatchFiles = [
-    './*.min.css',
+    './**/*.min.css',
     './js/**/*.min.js',
     './**/*.php'
 ];
@@ -174,7 +174,7 @@ gulp.task( 'watch', function() {
   // don't listen to whole js folder, it'll create an infinite loop
   gulp.watch( [ './js/**/*.js', '!./js/dist/*.js' ], [ 'scripts' ] )
  
-  gulp.watch( './sass/**/**/*.scss', ['sass', 'sass-min'] );
+  gulp.watch( './sass/**/**/**/*.scss', ['sass', 'sass-min'] );
 
   gulp.watch( './images/**/*', ['images']);
  
