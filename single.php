@@ -9,29 +9,57 @@
 
 get_header(); ?>
 
-	<div class="container">
+	<div class="container main-container">
 		<div class="row">
 			<div id="primary" class="content-area">
 				<main id="main" class="site-main" role="main">
+					<div class="col-12 col-sm-8 ml-auto mr-auto">
+					<?php
 
-				<?php
-				while ( have_posts() ) : the_post();
+						outputMenuPageBreadCrumb( is_singular( 'post' ) );
 
-					get_template_part( 'template-parts/content', get_post_format() );
+						while ( have_posts() ) : the_post();
 
-					the_post_navigation();
+						// post is menu item in this theme
+						if( is_singular( 'post' ) ){
+							// recreating the array we have from index 
+							$catID 			= get_the_category()[0]->term_id; 
+							$obj 			= get_category( $catID );
+							$thisCategory  	= array( $obj );
+							$category 		= $obj;
 
-					// If comments are open or we have at least one comment, load up the comment template.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
+							$post_counter = 0;
+							$fhp_counter  = 0;
+							$s_counter	  = 0;
+							$bev_counter  = 0;
 
-				endwhile; // End of the loop.
-				?>
+							if( $thisCategory[0]->cat_name == $category->name ){
+								if( strtolower( $thisCategory[0]->cat_name ) == "fresh homemade pizza"){
+									$fhp_counter++;
+									include( 'template-parts/menu-items/fresh-homemade-pizza.php' );
+								} elseif( strtolower( $thisCategory[0]->cat_name ) == "fresh salads" ){
+									$s_counter++; 
+									include( 'template-parts/menu-items/fresh-salads.php' );	
+								} elseif( strtolower( $thisCategory[0]->cat_name ) == "beverages" ){
+									$bev_counter++;
+									include( 'template-parts/menu-items/beverages.php' );
+								} else {
+									include( 'template-parts/menu-items/standard.php' );
+								}
 
+							} 
+						} else {
+							the_content();
+						}
+
+						endwhile; // End of the loop.
+					?>
+					</div>
 				</main><!-- #main -->
 			</div><!-- #primary -->
-
 <?php
-get_sidebar();
+//get_sidebar();
+?>
+	</div><!--  .row -->
+<?php 
 get_footer();

@@ -23,14 +23,9 @@ get_header(); ?>
 						// ini_set('display_errors', 1);
 						// ini_set('display_startup_errors', 1);
 						// error_reporting(E_ALL);
+					
+						outputMenuPageBreadCrumb( TRUE );
 					?>
-
-					<div class="row">
-						<div class="col-12 menuBreadcrumb">
-							<?php echo bootstrap_breadcrumb(); ?>
-						</div>
-					</div>
-
 					<div class="row">
 							<!-- <div class="col-0 col-sm-2 b-red"></div> -->
 							<div class="col-12">

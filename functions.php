@@ -189,3 +189,16 @@ function displayImg( $imgID = NULL, $size = "thumbnail", $class = NULL, $echo = 
 			}
 	}
 }
+
+
+function outputMenuPageBreadCrumb( $isPost = FALSE ) {
+	if( $isPost ){
+	?>
+		<div class="row">
+			<div class="col-12 menuBreadcrumb">
+				<?php echo bootstrap_breadcrumb(); ?>
+			</div>
+		</div>
+	<?php
+	}
+}
