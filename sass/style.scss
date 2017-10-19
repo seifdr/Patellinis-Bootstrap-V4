@@ -90,6 +90,10 @@ div.pseudo-row {
 	color: $primaryRed;
 }
 
+.b-red {
+	border: 1px solid red;
+}
+
 .btn-primary {
 
 	background-color: $primaryRed;
@@ -100,4 +104,54 @@ div.pseudo-row {
 		background-color: $secondaryRed;
 	}
 
+}
+
+
+// CSS FOR SHOW/HIDE AT BREAKPOINTS
+
+@include media-breakpoint-up(xs) {
+	
+}
+
+@include media-breakpoint-up(sm) {
+	.hidden-sm-up {
+		display: none;
+	}
+}
+
+@include media-breakpoint-up(md) {
+	.hidden-md-up {
+		display: none;
+	}
+}
+@include media-breakpoint-up(lg) {	
+	.hidden-lg-up {
+		display: none;
+	}
+}
+@include media-breakpoint-up(xl) {
+	.hidden-xl-up {
+		display: hidden;
+	}
+}
+
+@include media-breakpoint-down(xs) { 
+	.hidden-xs-down {
+		display: none;
+	}
+}
+@include media-breakpoint-down(sm) {
+	.hidden-sm-down {
+		display: none;
+	}
+}
+@include media-breakpoint-down(md) { 
+	.hidden-md-down {
+		display: none;
+	}
+ }
+@include media-breakpoint-down(lg) { 
+	.hidden-lg-down {
+		display: none;
+	}
 }

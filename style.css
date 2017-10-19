@@ -9331,9 +9331,44 @@ div.pseudo-row {
 .red {
   color: #b32317; }
 
+.b-red {
+  border: 1px solid red; }
+
 .btn-primary {
   background-color: #b32317;
   color: #fff !important;
   border: 0; }
   .btn-primary:hover {
     background-color: #861a11; }
+
+@media (min-width: 576px) {
+  .hidden-sm-up {
+    display: none; } }
+
+@media (min-width: 768px) {
+  .hidden-md-up {
+    display: none; } }
+
+@media (min-width: 992px) {
+  .hidden-lg-up {
+    display: none; } }
+
+@media (min-width: 1200px) {
+  .hidden-xl-up {
+    display: hidden; } }
+
+@media (max-width: 575px) {
+  .hidden-xs-down {
+    display: none; } }
+
+@media (max-width: 767px) {
+  .hidden-sm-down {
+    display: none; } }
+
+@media (max-width: 991px) {
+  .hidden-md-down {
+    display: none; } }
+
+@media (max-width: 1199px) {
+  .hidden-lg-down {
+    display: none; } }

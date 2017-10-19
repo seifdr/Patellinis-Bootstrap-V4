@@ -31,6 +31,7 @@ function bootstrap_breadcrumb() {
   
   if ( (is_front_page()) || (is_home()) ) {
     $html .= '<li class="breadcrumb-item active">Home</li>';
+    $html .= '<li class="breadcrumb-item active">Menu</li>';
   }
   
   else {

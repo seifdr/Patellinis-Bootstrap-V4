@@ -180,6 +180,7 @@ class PatelinnisMenu
 				ul#sortableCats, ul#unsortedCats {
 					/*margin: 0 1em;*/
 					max-width: 100%;
+					min-height: 400px;
 				}
 
 				ul#sortableCats li, ul#unsortedCats li, ul.menuItemSort li {
