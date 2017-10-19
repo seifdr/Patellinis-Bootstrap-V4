@@ -20,7 +20,7 @@ $the_bev_type			= get_field( 'beverage_type' );
 			<?php echo get_field('description'); ?>
 		</div>
 		<?php if( strtolower( $the_bev_type ) == "soda" ) { ?>
-			<div class="hidden-sm-up col-sm-2"></div><div class="col-3 col-sm-2 text-center simulatedH4"><?php if( !empty( $the_regular_price_soda ) ){ echo "$" . $the_regular_price_soda; } ?></div>
+			<div class="col-sm-2"></div><div class="col-3 col-sm-2 text-center simulatedH4"><?php if( !empty( $the_regular_price_soda ) ){ echo "$" . $the_regular_price_soda; } ?></div>
 			<div class="col-3 col-sm-2 text-center simulatedH4"><?php if( !empty( $the_large_price_soda ) ){ echo "$" . $the_large_price_soda; } ?></div>
 		<?php } else { ?>
 			<div class="col-3 col-sm-4" ></div><div class="col-3 col-sm-2 text-center simulatedH4"><?php if( !empty( $the_price ) ){ echo "$" . $the_price; }  ?></div>

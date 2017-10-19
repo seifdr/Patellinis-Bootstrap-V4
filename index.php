@@ -35,7 +35,7 @@ get_header(); ?>
 							<!-- <div class="col-0 col-sm-2 b-red"></div> -->
 					</div>
 						<div class="row browseMenu">
-									<ul class="col-6" >
+									<ul class="col-12 col-sm-6" >
 									<?php 
 
 										$categories = get_categories( array(
@@ -77,7 +77,7 @@ get_header(); ?>
 											echo '<li><a href="#'. $category->name .'">'.  $category->name . '</a></li>';
 
 											if( $catCount == $categoryCnt ){
-												echo '</ul><ul class="col-6">';
+												echo '</ul><ul class="col-12 col-sm-6">';
 											}
 										}
 									?>
