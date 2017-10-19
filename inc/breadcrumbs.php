@@ -30,12 +30,12 @@ function bootstrap_breadcrumb() {
   $html = '<ol class="breadcrumb">';
   
   if ( (is_front_page()) || (is_home()) ) {
-    $html .= '<li class="breadcrumb-item active">Home</li>';
+    $html .= '<li class="breadcrumb-item active"><a title="Visit our homepage" href="'.esc_url(home_url('/')).'">Home</a></li>';
     $html .= '<li class="breadcrumb-item active">Menu</li>';
   }
   
   else {
-    $html .= '<li class="breadcrumb-item"><a href="'.esc_url(home_url('/')).'">Home</a></li>';
+    $html .= '<li class="breadcrumb-item"><a title="Visit our homepage" href="'.esc_url(home_url('/')).'">Home</a></li>';
     
     if ( is_attachment() ) {
       $parent = get_post($post->post_parent);
