@@ -50,8 +50,11 @@ function bootstrap_breadcrumb() {
     }
     
     elseif ( is_category() ) {
+
+      $html .= '<li class="breadcrumb-item"><a href="' . get_permalink( get_option( 'page_for_posts' ) ) . '">Menu</a></li>';
+
       $category = get_category( get_query_var( 'cat' ) );
-      
+
       if ( $category->parent != 0 ) {
         $html .= custom_get_category_parents( $category->parent );
       }
