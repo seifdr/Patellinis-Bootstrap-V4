@@ -22,7 +22,7 @@ get_header(); ?>
 					<div class="row">
 					<!-- <div class="col-0 col-sm-2 b-red"></div> -->
 						<div class="col-12">
-							<p>For those with a gluten allergy or have Celiac Disease, please visit our <a href="#<?php //echo get_term_link('gluten free', 'post_tag'); ?>"><strong> gluten free menu </strong></a>.</p>
+							<p>For those with a gluten allergy or have Celiac Disease, please visit our <a href="<?php echo get_term_link('gluten free', 'post_tag'); ?>"><strong> gluten free menu </strong></a>.</p>
 							<br />
 							<h2><?php echo single_term_title(); ?></h2>
 							<?php

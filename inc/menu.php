@@ -475,13 +475,41 @@ class PatelinnisMenu
 		global $pagenow;
 
 		// dont run if the save is result of a revision or autosave
-		if( ! ( wp_is_post_revision( $post_id) || wp_is_post_autosave( $post_id ) ) ) {
+		if( !( wp_is_post_revision( $post_id) || wp_is_post_autosave( $post_id ) ) ) {
+			
+			//$_POST['acf']['field_58f77e4422903'] is the gluten free toggle 
+			if( $_POST['acf']['field_58f77e4422903'] == 1 ){
+				//if gf toggle is on, save add gluten free tag to post
+				wp_set_post_tags( $post_id, array('Gluten Free'), TRUE );
+			} else {
+				//gf toggle is off, so get a list of tags for the post which may or may not contain gluten free 
+				$tags = wp_get_post_tags( $post_id );
+
+				//if its empty, there are no tags and no reason to progress further
+				if( count( $tags > 0 ) ){ 
+
+					//set tag to delete
+					$tags_to_delete = array( 'Gluten Free' );
+					//set an empty array for tags to complete. As we loop below we'll add any tags that arent gf to this array
+					$tags_to_keep = array();
+
+					//loop through array, but exlude gluten free
+					foreach ($tags as $t) {
+						if( !in_array( $t->name, $tags_to_delete) ){
+							$tags_to_keep[] = $t->name;
+						}
+					}
+
+					//resave post tags
+					wp_set_post_tags( $post_id, $tags_to_keep, FALSE );
+				}
+
+			}				
 			// if post is in trash do worry about this 
 			if ( 'trash' != get_post_status( $post_id ) && ( !empty( $_POST ) )  ) {
 
 				//if there is a prexisting cat, check for it now and assign it var 
 				$old_cat = get_the_category( $post_id );
-
 
 				if( isset( $_POST['post_type'] ) && ( $_POST['post_type'] == 'post' ) ){
 					$catArr = array();
@@ -520,10 +548,9 @@ class PatelinnisMenu
 				    	//must be new post/menuitem because it doesnt have a previous category. So make sure it appears last in list
 				    	update_post_meta( $post_id, 'menuItemOrder', $menuItemCount );
 				    }
-
 				}
 			  	
-			}
+			} // close - if post is in the trash
 		}
 	} 
 
