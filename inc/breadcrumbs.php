@@ -89,8 +89,8 @@ function bootstrap_breadcrumb() {
       if ( $categories[0] ) {
         $html .= custom_get_category_parents($categories[0]);
       }
-      
-      $html .= '<li class="breadcrumb-item active">' . get_the_title() . '</li>';
+
+      $html .= '<li class="breadcrumb-item active">' . ucwords( strtolower( get_the_title() ) ) . '</li>';
     }
     
     elseif ( is_tag() ) {
