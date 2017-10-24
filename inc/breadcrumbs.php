@@ -86,6 +86,8 @@ function bootstrap_breadcrumb() {
     elseif ( is_singular( 'post' ) ) {
       $categories = get_the_category();
       
+      $html .= '<li class="breadcrumb-item"><a href="' . get_permalink( get_option( 'page_for_posts' ) ) . '">Menu</a></li>';
+
       if ( $categories[0] ) {
         $html .= custom_get_category_parents($categories[0]);
       }
