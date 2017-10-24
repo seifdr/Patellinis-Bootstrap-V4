@@ -93,7 +93,8 @@
 			</header><!-- #masthead -->
 
 			<div id="content" class="site-content">
-			<?php if( !is_front_page() && !is_home() && !is_single() ){ ?>
+			<?php // if( !is_front_page() && !is_home() && !is_single() && !cat ){ ?>
+			<?php if( is_page() ) { ?>
 				<div class="row">
 					<div class="col-12">
 						<?php echo bootstrap_breadcrumb(); ?>

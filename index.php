@@ -25,6 +25,8 @@ get_header(); ?>
 						// error_reporting(E_ALL);
 					
 						outputMenuPageBreadCrumb( TRUE );
+
+						echo "hello";
 					?>
 					<div class="row">
 							<!-- <div class="col-0 col-sm-2 b-red"></div> -->
