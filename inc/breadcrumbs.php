@@ -96,6 +96,7 @@ function bootstrap_breadcrumb() {
     }
     
     elseif ( is_tag() ) {
+      $html .= '<li class="breadcrumb-item"><a href="' . get_permalink( get_option( 'page_for_posts' ) ) . '">Menu</a></li>';
       $html .= '<li class="breadcrumb-item active">' . single_tag_title( '', false ) . '</li>';
     }
     
