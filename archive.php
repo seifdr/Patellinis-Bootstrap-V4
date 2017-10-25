@@ -7,7 +7,13 @@
  * @package StrapPress
  */
 
-get_header(); ?>
+get_header(); 
+
+
+
+?>
+
+
 
 <div class="container main-container">
 	<div class="row">
@@ -22,68 +28,32 @@ get_header(); ?>
 					<div class="row">
 					<!-- <div class="col-0 col-sm-2 b-red"></div> -->
 						<div class="col-12">
-							<p>For those with a gluten allergy or have Celiac Disease, please visit our <a href="<?php echo get_term_link('gluten free', 'post_tag'); ?>"><strong> gluten free menu </strong></a>.</p>
-							<br />
-							<h2><?php echo single_term_title(); ?></h2>
+							<?php if( !is_tag('Gluten Free') ){ ?>
+								<h1><?php echo single_term_title(); ?> Menu</h1>
+								<?php
+								the_archive_description('<p>','</p>');
+								echo '<p>For those with a gluten allergy or have Celiac Disease, please visit our <a href="'. get_term_link('gluten free', 'post_tag') .'"><strong> gluten free menu </strong></a>.</p><br />';
+								?>
+							<?php } else { ?>
+								<h1><?php echo single_term_title(); ?> Menu</h1>
 							<?php
-								the_archive_description( '<p>', '</p>' );
-							?>
+								the_archive_description('<p>','</p>');
+								echo "<p>Below is a list of our gluten free menu options. To view our complete menu, please visit our <strong><a href='". get_permalink( get_option( "page_for_posts" ) ) ."'>menu page.</a></strong></p><br />";
+							 } ?>							
 						</div>
 					<!-- <div class="col-0 col-sm-2 b-red"></div> -->
 					</div>
 					<div class="row">
 						<div class="col-12">
-						<?php
-							if ( have_posts() ) { 
-								// recreating the array we have from index 
-								$catID 			= get_cat_ID( single_term_title( '', FALSE ) ); 
-								$obj 			= get_category( $catID );
-								$thisCategory  	= array( $obj );
-								$category 		= $obj;
+						<?php 
 
-								$post_counter = 0;
-								$fhp_counter  = 0;
-								$s_counter	  = 0;
-								$bev_counter  = 0;
+							//in functions.php file, shared with index.php. 
+							//this function returns a sorted list of categories by a custom metadata order value
+							$categories = get_meta_key_sorted_category_list();		
 
-								/* Start the Loop */
-								while ( have_posts() ) { 
-									the_post();
-									$post_counter++;
-
-									if( strtolower( $thisCategory[0]->cat_name ) == "fresh homemade pizza"){
-										$fhp_counter++;
-										include( 'template-parts/menu-items/fresh-homemade-pizza.php' );
-									} elseif( strtolower( $thisCategory[0]->cat_name ) == "fresh salads" ){
-										$s_counter++; 
-										include( 'template-parts/menu-items/fresh-salads.php' );	
-									} elseif( strtolower( $thisCategory[0]->cat_name ) == "beverages" ){
-										$bev_counter++;
-										include( 'template-parts/menu-items/beverages.php' );
-									} else {
-										include( 'template-parts/menu-items/standard.php' );
-									}
-			
-								} // endwhile
-
-								
-								$after_cat_title 	= get_field( 'after_cat_title', 'category_'. $catID );
-								$after_cat_content 	= get_field( 'after_cat_content', 'category_'. $catID );
-
-								if( !empty( $after_cat_title ) || !empty( $after_cat_content ) ){
-
-										if( !empty( $after_cat_title ) ){
-											echo '<h4>'. $after_cat_title . '</h4>';
-										}
-
-										if( !empty( $after_cat_content ) ){
-											echo '<p>'. $after_cat_content . '</p>';
-										}
-								}
-							} else {
-								get_template_part( 'template-parts/content', 'none' );
-
-							} ?>
+							// in function.php file, shared with index.php
+							output_menu_items_by_category( $categories );
+						?>
 						</div> <!-- close col-12 -->
 					</div> <!-- close row -->
 

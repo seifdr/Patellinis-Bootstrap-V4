@@ -202,3 +202,154 @@ function outputMenuPageBreadCrumb( $isPost = FALSE ) {
 	<?php
 	}
 }
+
+//shared get sorted categories by menu item order stored as metadata
+function get_meta_key_sorted_category_list(){
+
+	//if its a tag page, then we need only categories that have a post with that tag. Otherwise we can use all categories for the main page
+	if( is_tag() ){
+		//pull in the global post returned by main query 
+		global $posts;
+		
+		//set empty array to capture, categories from posts in main query
+		$tagCats = [];
+
+		foreach ($posts as $p ) {
+			//get the category id, should only be one, so we grab the first
+			$cat = get_the_category( $p->ID )[0];
+
+			//check if category id is already in tagcat array, if not, add it.
+			if( !in_array( $cat->term_id, $tagCats ) ){
+				$tagCats[] = $cat->term_id;
+			}
+		}
+
+		$categories = get_categories( array(
+			'hide_empty' => TRUE,
+			'exclude'	=> 1,
+			'include'	=> $tagCats,
+			'orderby' => 'meta_value',
+			'meta_key' => 'categoryOrder',
+			'order'   => 'ASC'
+		) );
+
+	} else {
+		$categories = get_categories( array(
+			'hide_empty' => TRUE,
+			'exclude'	=> 1,
+			'orderby' => 'meta_value',
+			'meta_key' => 'categoryOrder',
+			'order'   => 'ASC'
+		) );
+	}
+
+	//meta_key sort - meta_key sort not working in the term query, so we have to manually do 
+	
+	$postCatsArchive = array();
+	
+	$counterHere = 100;
+	
+	foreach ( $categories as $postCat ) {
+	  
+	  //look( $postCat );
+	  $x = get_term_meta( $postCat->term_id, 'categoryOrder')[0];
+	  
+	  // $postCatsArchive[] = $x;
+	  $postCatsArchive[$x] = $postCat;
+	   
+	  $counterHere++;
+	}
+	
+	ksort( $postCatsArchive, SORT_NUMERIC ); //sorts the issue_archive array from low to high
+	
+	$categories = $postCatsArchive;		
+	
+	//end meta_key sort	
+
+	return $categories;
+}
+
+//shared menu item display code for the index and archive pages
+function output_menu_items_by_category( $categories=NULL){
+	
+
+	if( !empty( $categories) ){
+
+			foreach ( $categories as $category ) {	
+ 
+				if( $category->count > 0 ){	
+			?>
+					<div class="row">
+						<div class="col-12">
+						<?php 
+							echo "<h2 id='". $category->name ."' class='menuCat' >". $category->name ."</h2>";
+							echo "<p>". $category->description;
+							
+							if( is_tag('Gluten Free') ){
+								echo " The following gluten free pizza options <strong>are available in 10″ only.</strong>";
+							}
+							echo "</p>";
+						?>
+						</div>
+					</div>
+				
+				<?php 
+
+				if ( have_posts() ) {
+
+					$post_counter = 0;
+					$fhp_counter  = 0;
+					$s_counter	  = 0;
+					$bev_counter  = 0;
+
+					while ( have_posts() ) {
+						the_post();
+						$post_counter++;
+
+						$thisCategory = get_the_category();
+
+						if( $thisCategory[0]->cat_name == $category->name ){
+							if( strtolower( $thisCategory[0]->cat_name ) == "fresh homemade pizza"){
+								$fhp_counter++;
+								include( 'template-parts/menu-items/fresh-homemade-pizza.php' );
+							} elseif( strtolower( $thisCategory[0]->cat_name ) == "fresh salads" ){
+								$s_counter++; 
+								include( 'template-parts/menu-items/fresh-salads.php' );	
+							} elseif( strtolower( $thisCategory[0]->cat_name ) == "beverages" ){
+								$bev_counter++;
+								include( 'template-parts/menu-items/beverages.php' );
+							} else {
+								include( 'template-parts/menu-items/standard.php' );
+							}
+						
+						} // end if( $thisCategory[0]->cat_name == $category->name ){
+
+					} // end while have_posts()
+
+						$after_cat_title = get_field( 'after_cat_title', 'category_'.$category->cat_ID );
+						$after_cat_content = get_field( 'after_cat_content', 'category_'.$category->cat_ID );
+
+						if( !empty( $after_cat_title ) || !empty( $after_cat_content ) ){
+
+							echo "<div class='row' ><div class='col-12'>";
+
+								if( !empty( $after_cat_title ) ){
+									echo '<h4>'. $after_cat_title . '</h4>';
+								}
+
+								if( !empty( $after_cat_content ) ){
+									echo '<p>'. $after_cat_content . '</p>';
+								}
+
+							echo "<br /></div></div>";
+
+						}
+				} // end if have posts
+
+				// rewind
+				//rewind_posts();
+			} // end if( $category->count > 0 )
+		} // end foreach categories
+
+	} // end if !empty( categories )
+}
