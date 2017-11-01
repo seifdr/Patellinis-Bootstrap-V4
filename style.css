@@ -9145,6 +9145,8 @@ div.footer-widgets {
   background-color: #000;
   color: #fff;
   text-align: center; }
+  div.footer-widgets p {
+    text-align: center; }
   div.footer-widgets > div {
     padding-top: 1em; }
   div.footer-widgets a#emailUs {
@@ -9387,6 +9389,9 @@ img {
 
 .gallery-caption {
   display: block; }
+
+strong {
+  font-weight: bold !important; }
 
 body {
   font-family: 'Overlock', serif !important;

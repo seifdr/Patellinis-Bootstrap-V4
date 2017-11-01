@@ -47,6 +47,10 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 --------------------------------------------------------------*/
 @import "media/media";
 
+strong {
+	font-weight: bold !important;
+}
+
 // body style
 body {
 	font-family: 'Overlock', serif !important;

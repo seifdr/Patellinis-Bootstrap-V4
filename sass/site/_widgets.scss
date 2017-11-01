@@ -49,6 +49,10 @@ div.footer-widgets {
 	background-color: $black;
 	color: $white;
 	text-align: center;
+
+	p {
+		text-align: center;
+	}
 	
 	& > div {
 		padding-top: 1em;
