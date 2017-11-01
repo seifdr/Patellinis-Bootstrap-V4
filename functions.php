@@ -1,6 +1,14 @@
 <?php
 
 /**
+ * Sidebar override 
+ * If true --> no sidebar will show on page
+ * If false --> sidebar will show on pages is no featured image is provided
+ */
+
+const SIDEBAR_OVERRIDE = FALSE;
+
+/**
  * StrapPress functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/

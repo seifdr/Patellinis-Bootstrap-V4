@@ -16,7 +16,7 @@ get_header(); ?>
 
 	<div class="container main-container">
 		<div class="row">
-			<div id="primary" class="<?php echo ( is_active_sidebar( 'sidebar-1' ) )? 'content-area-with-sidebar' : 'content-area'; ?>">
+			<div id="primary" class="<?php echo ( is_active_sidebar( 'sidebar-1' ) && ( SIDEBAR_OVERRIDE == TRUE ) )? 'content-area-with-sidebar' : 'content-area'; ?>">
 				<main id="main" class="site-main" role="main">
 					
 					<?php
